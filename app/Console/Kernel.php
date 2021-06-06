@@ -27,8 +27,8 @@ class Kernel extends ConsoleKernel
         //   $schedule->command('optimize')->everyMinute();
 
         $schedule->command('forcedelete:tasks')
-                //  ->daily();
-                 ->everyMinute();
+                 ->daily();
+                //  ->everyMinute();
 
     }
 
