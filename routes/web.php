@@ -16,7 +16,7 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-if (App::environment('production')) {
+if (App::environment('development')) {
     URL::forceScheme('https');
 }
 
