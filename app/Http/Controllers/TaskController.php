@@ -224,6 +224,7 @@ class TaskController extends Controller
                 fclose($handle);
                 $headers = array('Content-type'=> 'application/json');
                 return response()->download($filename, $filename, $headers);
+
             }
         }
 
