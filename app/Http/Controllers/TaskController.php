@@ -215,6 +215,7 @@ class TaskController extends Controller
                 return Excel::download(new TasksExport, auth()->user()->name.'-tasks.csv');
 
             }elseif(request()->get('type') == 'json'){
+
                 $model = new TasksExport;
                 $data = $model->collection();
                 $filename = auth()->user()->name.'-tasks.json';
