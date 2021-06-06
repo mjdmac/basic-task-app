@@ -31,8 +31,8 @@ class TasksExport implements FromCollection, WithEvents, WithHeadings, ShouldAut
         $data = Task::join('users', 'tasks.created_by', '=', 'users.id')
         ->select(\DB::raw('users.name as User, tasks.id as Task_Id, tasks.parent as Parent_Task_Id,
                            tasks.name as Task_Name, tasks.status as Status,
-                           TO_CHAR(tasks.created_at :: DATE, "Mon dd, yyyy") as Date_Created,
-                           TO_CHAR(tasks.deleted_at :: DATE, "Mon dd, yyyy") as Date_Deleted'))
+                           TO_CHAR(tasks.created_at, "Mon dd, yyyy") as Date_Created,
+                           TO_CHAR(tasks.deleted_at, "Mon dd, yyyy") as Date_Deleted'))
         ->where('tasks.created_by', auth()->user()->id)
         ->orderBy('tasks.status')
         ->withTrashed()
