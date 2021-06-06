@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        URL::forceScheme('https');
         // Inertia::share('flash', function () {
         //     return [
         //         'success' => Session::get('success')

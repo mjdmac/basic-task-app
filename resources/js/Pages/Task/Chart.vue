@@ -60,7 +60,7 @@ export default {
     },
 
     setup (tasks) {
-        console.log(tasks.data)
+        // console.log(tasks.data)
         const pieChart = {
         id: 'pieChart',
         type: 'pie',

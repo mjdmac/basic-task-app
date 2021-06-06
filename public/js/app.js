@@ -18437,7 +18437,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {},
   setup: function setup(tasks) {
-    console.log(tasks.data);
+    // console.log(tasks.data)
     var pieChart = {
       id: 'pieChart',
       type: 'pie',
