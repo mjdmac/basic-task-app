@@ -16,8 +16,8 @@ class TasksExport implements FromCollection, WithEvents, WithHeadings, ShouldAut
     public function collection()
     {
         $data = Task::join('users', 'tasks.created_by', '=', 'users.id')
-        ->select(\DB::raw('users.name as User, tasks.id as Task_Id, tasks.name as Task_Name,
-                           tasks.parent as Parent_Task_Id, tasks.status as Status,
+        ->select(\DB::raw('users.name as User, tasks.id as Task_Id, tasks.parent as Parent_Task_Id,
+                           tasks.name as Task_Name, tasks.status as Status,
                            date_format(tasks.created_at, "%d %M %Y") as Date_Created,
                            date_format(tasks.deleted_at, "%d %M %Y") as Date_Deleted'))
         ->where('tasks.created_by', auth()->user()->id)
@@ -34,7 +34,7 @@ class TasksExport implements FromCollection, WithEvents, WithHeadings, ShouldAut
 
     public function headings(): array
     {
-        return ['User', 'Task Id', 'Task Name', 'Parent Task Id', 'Status', 'Date Created', 'Date Deleted'];
+        return ['User', 'Task Id', 'Parent Task Id',  'Task Name', 'Status', 'Date Created', 'Date Deleted'];
     }
 
     public function registerEvents(): array

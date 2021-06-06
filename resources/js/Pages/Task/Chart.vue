@@ -14,8 +14,13 @@
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div align="center"  class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
+                <div align="center" class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
+                   <div v-show="data.data <= 0">
+                       <span class="text-gray-500">Complete tasks to show chart</span>
+                   </div>
+
                     <!-- Chart -->
+
                     <div style="height:350px;width: 350px;">
                             <vue3-chart-js
                                 :id="pieChart.id"
