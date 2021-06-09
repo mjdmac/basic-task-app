@@ -37,7 +37,6 @@
 <script>
     import Vue3ChartJs from '@j-t-mcc/vue3-chartjs'
     import AppLayout from '@/Layouts/AppLayout'
-    import shared from '@/Scripts/shared'
 
 export default {
     components: {
