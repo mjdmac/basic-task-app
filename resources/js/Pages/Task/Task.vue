@@ -202,7 +202,7 @@
 
                 if(status == true){
                     this.isOpen = true;
-                    this.$refs.taskname.focus();
+                    // this.$refs.taskname.focus();
                 }else if(status == false){
                     this.form = {};
                     this.isOpen = false;
