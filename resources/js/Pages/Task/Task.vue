@@ -98,7 +98,7 @@
                                         <!-- Name -->
                                             <div class="mb-4">
                                                 <jet-label for="name" value="Name" />
-                                                <jet-input id="name" required ref="taskname" type="text" class="mt-1 block w-full" @keyup.enter="save" v-model="form.name"/>
+                                                <jet-input id="name" ref="taskname" type="text" class="mt-1 block w-full" @keyup.enter="save" v-model="form.name"/>
 
                                             </div>
 
@@ -194,16 +194,6 @@
             }
         },
 
-        // setup() {
-        //     const form = this.$inertia.form({
-        //             name: '',
-        //             description: null,
-        //             status: 'Pending',
-        //             custom_status: null,
-        //             parent: route().current('tasks.index') ? null : this.data.id
-        //         }),
-        // },
-
         methods: {
             disabledClick: function(s){
                 this.disabled = s;
@@ -221,21 +211,6 @@
 
                 return this.isOpen;
             },
-
-            // resetForm: function () {
-            //     this.form = {
-            //         name: null,
-            //         description: null,
-            //         status: 'Pending',
-            //         custom_status: null,
-            //     }
-            // },
-
-            // closeModal: function () {
-            //     this.isOpen = false;
-            //     this.editMode=false;
-            //     this.from.reset();
-            // },
 
             show: function (id) {
                  this.$inertia.visit('/tasks/' + id)
@@ -274,11 +249,11 @@
                         this.disabledClick(true)
                     },
                      onSuccess: () => {
-                        preserveState = true,
                         this.disabledClick(false),
                         this.openModal(false)
                     },
-                    onFinish: () => this.form.reset(),
+                    onFinish: () => this.form = {},
+                    preserveScroll: true
                 })
             },
 
